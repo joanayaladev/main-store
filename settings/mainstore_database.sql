@@ -1,3 +1,4 @@
+-- Create users table
 CREATE TABLE users (
     id            BIGSERIAL     PRIMARY KEY,
     firstname     VARCHAR(100)  NOT NULL,
@@ -13,3 +14,11 @@ CREATE TABLE users (
     updated_at    TIMESTAMPTZ   NOT NULL DEFAULT NOW(),
     deleted_at    TIMESTAMPTZ
 );
+
+-- Select all users from users table
+SELECT * FROM users;
+-- Insert a new user into users table
+INSERT INTO users (firstname, lastname, ident_number, email, password) VALUES (‘Joan’, ’Ayala’, ‘56890988’, ‘joan@mail.com’, ‘123456’) ;
+-- Update field url_foto
+UPDATE users SET url_photo = 'photos/photo_default.png';
+UPDATE users SET url_photo = 'photos/photo_default.png' WHERE id = 12;
